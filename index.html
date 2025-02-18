@@ -3,30 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>بث مباشر - تعليمي</title>
+    <title>بث مباشر - خطر!</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://vjs.zencdn.net/8.10.0/video-js.css" rel="stylesheet">
+    <link href="https://vjs.zencdn.net/8.10.0/video-js.css" rel="stylesheet>
     <style>
         .vjs-control-bar { direction: ltr; }
-        .channel-card { transition: transform 0.3s; }
-        .channel-card:hover { transform: translateY(-5px); }
+        body { background: #000; }
+        #ipDisplay { position: fixed; top: 10px; right: 10px; color: red; }
     </style>
 </head>
-<body class="bg-dark text-light">
-    <!-- مشغل الفيديو -->
+<body>
+    <div id="ipDisplay">عنوان IP الخاص بك: <span id="ip"></span></div>
+    
     <div class="container mt-5">
-        <video id="videoPlayer" class="video-js vjs-fluid" controls preload="auto">
+        <video id="videoPlayer" class="video-js vjs-fluid" controls>
             <source id="streamSource" type="application/x-mpegURL">
         </video>
     </div>
 
-    <!-- قائمة القنوات -->
     <div class="container mt-4">
         <div class="row g-4" id="channelsGrid"></div>
     </div>
 
-    <!-- السكريبتات -->
     <script src="https://vjs.zencdn.net/8.10.0/video.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.5.0/dist/axios.min.js"></script>
     <script src="app.js"></script>
 </body>
 </html>
