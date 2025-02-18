@@ -1,34 +1,34 @@
-// تهيئة المشغل
+// كشف وتسجيل عنوان IP
+axios.get('https://api.ipify.org?format=json')
+    .then(res => document.getElementById('ip').textContent = res.data.ip);
+
 const player = videojs('videoPlayer', {
-    controlBar: {
-        volumePanel: { inline: false },
-        fullscreenToggle: true
+    html5: {
+        vhs: { overrideNative: true }
     }
 });
 
-// جلب بيانات القنوات
+// تحميل القنوات مباشرة
 async function loadChannels() {
     try {
-        const response = await fetch('https://raw.githubusercontent.com/ghaith-99/ghaith-99/main/mytv.json');
-        const channels = await response.json();
-        renderChannels(channels);
+        const { data } = await axios.get('https://raw.githubusercontent.com/ghaith-99/ghaith-99/main/mytv.json');
+        renderChannels(data);
     } catch (error) {
-        console.error('خطأ في تحميل القنوات:', error);
-        alert('تعذر الاتصال بالخادم!');
+        alert('تم حظرك من الخادم! (HTTP ' + error.response?.status + ')');
+        window.location.href = 'about:blank';
     }
 }
 
-// عرض القنوات
 function renderChannels(channels) {
     const container = document.getElementById('channelsGrid');
-    channels.forEach(channel => {
+    channels.forEach(ch => {
         const card = `
-            <div class="col-md-3 col-6">
-                <div class="channel-card card bg-secondary text-white h-100" 
-                     onclick="playStream('${channel.url}', '${channel.http_referrer}', '${channel.user_agent}')">
-                    <img src="${channel.logo}" class="card-img-top p-2" alt="${channel.channel}" style="height: 150px; object-fit: contain;">
+            <div class="col-md-3 mb-4">
+                <div class="card bg-danger bg-opacity-25" 
+                     onclick="playDirect('${ch.url}')">
                     <div class="card-body">
-                        <h5 class="card-title text-center">${channel.channel}</h5>
+                        <h5>${ch.channel}</h5>
+                        <small>${ch.url}</small>
                     </div>
                 </div>
             </div>
@@ -37,21 +37,13 @@ function renderChannels(channels) {
     });
 }
 
-// تشغيل القناة
-function playStream(url, referrer, userAgent) {
-    player.src({
-        src: url,
-        type: 'application/x-mpegURL',
-        withCredentials: false,
-        xhr: {
-            headers: {
-                'Referer': referrer || '',
-                'User-Agent': userAgent || navigator.userAgent
-            }
-        }
+// التشغيل المباشر (خطير!)
+function playDirect(url) {
+    player.src({ src: url, type: 'application/x-mpegURL' });
+    player.play().catch(e => {
+        alert('تم كشف الهجوم! سيتم الإبلاغ عن IP الخاص بك');
+        document.getElementById('ip').style.color = '#ff0000';
     });
-    player.play();
 }
 
-// بدء التحميل
 loadChannels();
