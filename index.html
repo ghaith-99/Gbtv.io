@@ -1,252 +1,141 @@
-<html>
- <head>
-  <title>
-   Super TV
-  </title>
-  <script src="https://cdn.tailwindcss.com">
-  </script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
- </head>
- <body class="bg-[#2b1900] text-white">
-  <header class="flex items-center justify-between p-4 bg-[#2b1900]">
-   <div class="flex items-center space-x-2">
-    <img alt="Super TV logo" class="h-8" height="30" src="https://storage.googleapis.com/a1aa/image/vaxowja20d1EGu0NE0uAfNWBLAWpZEFQIIBlcu29A_Y.jpg" width="30"/>
-    <span class="text-xl font-bold text-[#4b3f72]">
-     super tv
-    </span>
-   </div>
-   <div class="flex items-center space-x-4">
-    <i class="fas fa-search text-white">
-    </i>
-    <div class="relative">
-     <input class="hidden" id="theme-toggle" type="checkbox"/>
-     <label class="cursor-pointer" for="theme-toggle">
-      <i class="fas fa-moon text-[#ff7f50]">
-      </i>
-     </label>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Yacine TV</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-red-700 text-white">
+<!-- Main Container -->
+<div class="flex flex-col items-center min-h-screen">
+    <!-- Logo Section -->
+    <div class="flex items-center justify-center h-1/3 w-full">
+        <div class="text-center">
+            <h1 class="text-6xl font-bold">
+                YACINE
+                <span class="text-white bg-red-700 px-2">TV</span>
+            </h1>
+        </div>
     </div>
-    <i class="fas fa-bars text-[#ff7f50]">
-    </i>
-   </div>
-  </header>
-  <main class="p-4">
-   <div class="flex items-center space-x-2 mb-4">
-    <i class="fas fa-futbol text-[#ff7f50]">
-    </i>
-    <h1 class="text-2xl font-bold">
-     Home
-    </h1>
-    <span class="text-gray-400">
-     10 Channels
-    </span>
-   </div>
-   <div class="space-y-4">
-    <div class="bg-[#3b2a00] rounded-lg overflow-hidden">
-     <img alt="Soccer player kicking a ball in a stadium" class="w-full h-48 object-cover" height="300" src="https://storage.googleapis.com/a1aa/image/H4WLhQBMq6t2ETL-71izUNyCBRP0eTFd-4EKzDyCYQE.jpg" width="600"/>
-     <div class="p-4 flex items-center justify-between">
-      <div class="flex items-center space-x-2">
-       <span class="bg-[#ff7f50] text-white px-2 py-1 rounded">
-        beIN SPORTS 1
-       </span>
-       <a href="#video-player" onclick="playVideo('https://www.example.com/video1.mp4')">
-        <i class="fas fa-play text-[#ff7f50]">
-        </i>
-       </a>
-      </div>
-      <span class="text-gray-400">
-       Channel 1
-      </span>
-      <i class="fas fa-heart text-[#ff7f50]">
-      </i>
-     </div>
+    <!-- Menu Section -->
+    <div class="w-full px-4">
+        <div class="bg-red-600 p-4 rounded-lg shadow-lg">
+            <div class="flex justify-between items-center mb-4">
+                <i class="fas fa-bars text-2xl"></i>
+                <h2 class="text-xl font-bold">Yacine TV</h2>
+                <i class="fas fa-search text-2xl"></i>
+            </div>
+            <div class="space-y-4">
+                <button class="w-full bg-white text-red-700 font-bold py-2 rounded-lg" onclick="openVideoPlayer('ALRAHMA beIN Sport 1 HD', 'https://tv.kooraiq.com:4433/beIN_sport1/tracks-v1a1/mono.m3u8', 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/1-HD.png/240px-1-HD.png')">BIEN SPORT (720P)</button>
+                <button class="w-full bg-white text-red-700 font-bold py-2 rounded-lg" onclick="openVideoPlayer('ALRAHMA beIN Sport 1 HD', 'https://tv.kooraiq.com:4433/beIN_sport1/tracks-v1a1/mono.m3u8', 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/1-HD.png/240px-1-HD.png')">BIEN SPORT (360P)</button>
+                <button class="w-full bg-white text-red-700 font-bold py-2 rounded-lg" onclick="openVideoPlayer('ALRAHMA beIN Sport 1 HD', 'https://tv.kooraiq.com:4433/beIN_sport1/tracks-v1a1/mono.m3u8', 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/1-HD.png/240px-1-HD.png')">BIEN SPORT (244P)</button>
+                <button class="w-full bg-white text-red-700 font-bold py-2 rounded-lg" onclick="openVideoPlayer('ALRAHMA beIN Sport 1 HD', 'https://tv.kooraiq.com:4433/beIN_sport1/tracks-v1a1/mono.m3u8', 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/1-HD.png/240px-1-HD.png')">BIEN ENTERTAINMENT</button>
+                <button class="w-full bg-white text-red-700 font-bold py-2 rounded-lg" onclick="openVideoPlayer('ALRAHMA beIN Sport 1 HD', 'https://tv.kooraiq.com:4433/beIN_sport1/tracks-v1a1/mono.m3u8', 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/1-HD.png/240px-1-HD.png')">ARABIC CHANNELS</button>
+                <button class="w-full bg-white text-red-700 font-bold py-2 rounded-lg" onclick="openVideoPlayer('ALRAHMA beIN Sport 1 HD', 'https://tv.kooraiq.com:4433/beIN_sport1/tracks-v1a1/mono.m3u8', 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/1-HD.png/240px-1-HD.png')">OSN CHANNELS</button>
+                <button class="w-full bg-white text-red-700 font-bold py-2 rounded-lg" onclick="openVideoPlayer('ALRAHMA beIN Sport 1 HD', 'https://tv.kooraiq.com:4433/beIN_sport1/tracks-v1a1/mono.m3u8', 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/1-HD.png/240px-1-HD.png')">MBO CHANNELS</button>
+                <button class="w-full bg-white text-red-700 font-bold py-2 rounded-lg" onclick="openVideoPlayer('ALRAHMA beIN Sport 1 HD', 'https://tv.kooraiq.com:4433/beIN_sport1/tracks-v1a1/mono.m3u8', 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/1-HD.png/240px-1-HD.png')">FRANCE CHANNELS</button>
+                <button class="w-full bg-white text-red-700 font-bold py-2 rounded-lg" onclick="openVideoPlayer('ALRAHMA beIN Sport 1 HD', 'https://tv.kooraiq.com:4433/beIN_sport1/tracks-v1a1/mono.m3u8', 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/1-HD.png/240px-1-HD.png')">KIDS CHANNELS</button>
+            </div>
+        </div>
     </div>
-    <div class="bg-[#3b2a00] rounded-lg overflow-hidden">
-     <img alt="Soccer player kicking a ball with a glowing effect" class="w-full h-48 object-cover" height="300" src="https://storage.googleapis.com/a1aa/image/dAi8BA-l_Z6U2m3cv8ez_0nGa4B227tyqKHlo_O7QbA.jpg" width="600"/>
-     <div class="p-4 flex items-center justify-between">
-      <div class="flex items-center space-x-2">
-       <span class="bg-[#00bfff] text-white px-2 py-1 rounded">
-        beIN SPORTS 2
-       </span>
-       <a href="#video-player" onclick="playVideo('https://www.example.com/video2.mp4')">
-        <i class="fas fa-play text-[#ff7f50]">
-        </i>
-       </a>
-      </div>
-      <span class="text-gray-400">
-       Channel 2
-      </span>
-      <i class="fas fa-heart text-[#ff7f50]">
-      </i>
-     </div>
+    <!-- Channels Section -->
+    <div class="w-full px-4 mt-4">
+        <div class="bg-red-600 p-4 rounded-lg shadow-lg">
+            <div class="flex justify-between items-center mb-4">
+                <i class="fas fa-arrow-left text-2xl"></i>
+                <h2 class="text-xl font-bold">ARABIC CHANNELS</h2>
+                <i class="fas fa-search text-2xl"></i>
+            </div>
+            <div class="grid grid-cols-3 gap-4">
+                <div class="bg-white p-2 rounded-lg text-center">
+                    <img alt="Flag of Algeria" class="mx-auto mb-2" height="100" src="https://storage.googleapis.com/a1aa/image/BCGrgyVMfwlPSsxYD6ySOfwfz5WRXQm2NrsylJJO7QA.jpg" width="100"/>
+                    <p class="text-red-700 font-bold">ALGERIA</p>
+                </div>
+                <div class="bg-white p-2 rounded-lg text-center">
+                    <img alt="Flag of Morocco" class="mx-auto mb-2" height="100" src="https://storage.googleapis.com/a1aa/image/n_KvEDQVyos_H2wtGbfPql4oqlyi_rgYOoPUmqsU9ns.jpg" width="100"/>
+                    <p class="text-red-700 font-bold">MOROCCO</p>
+                </div>
+                <div class="bg-white p-2 rounded-lg text-center">
+                    <img alt="Flag of Tunisia" class="mx-auto mb-2" height="100" src="https://storage.googleapis.com/a1aa/image/JSayvFqfJjS9tgesnsHUWzLPRThIn-IgkthvBlKv8YY.jpg" width="100"/>
+                    <p class="text-red-700 font-bold">TUNISIA</p>
+                </div>
+                <div class="bg-white p-2 rounded-lg text-center">
+                    <img alt="Flag of Libya" class="mx-auto mb-2" height="100" src="https://storage.googleapis.com/a1aa/image/HBije4T7_-FSvme8KwpLZXu__JifIt2ngxE8j_4R0Mc.jpg" width="100"/>
+                    <p class="text-red-700 font-bold">LIBYA</p>
+                </div>
+                <div class="bg-white p-2 rounded-lg text-center">
+                    <img alt="Flag of Egypt" class="mx-auto mb-2" height="100" src="https://storage.googleapis.com/a1aa/image/frDdOuCDIXutoge_dx8_n3bHgmAmSn31rXHyk8OJtDE.jpg" width="100"/>
+                    <p class="text-red-700 font-bold">EGYPT</p>
+                </div>
+                <div class="bg-white p-2 rounded-lg text-center">
+                    <img alt="Flag of Saudi Arabia" class="mx-auto mb-2" height="100" src="https://storage.googleapis.com/a1aa/image/Bp05TYJAUr90Jj8mqjdZ_kq2O6PN-6QD-LSiTscH5YE.jpg" width="100"/>
+                    <p class="text-red-700 font-bold">SAUDI ARABIA</p>
+                </div>
+                <div class="bg-white p-2 rounded-lg text-center">
+                    <img alt="Flag of UAE" class="mx-auto mb-2" height="100" src="https://storage.googleapis.com/a1aa/image/5NAXpXzCwmZyfV-8E1gTrE4sOkqZnFNJGeWpYZQxIOM.jpg" width="100"/>
+                    <p class="text-red-700 font-bold">UEA</p>
+                </div>
+                <div class="bg-white p-2 rounded-lg text-center">
+                    <img alt="Flag of Palestine" class="mx-auto mb-2" height="100" src="https://storage.googleapis.com/a1aa/image/8ro1N5bLn5j8VZePfzlMr7dFehcWkU1J_t36U2qx1pc.jpg" width="100"/>
+                    <p class="text-red-700 font-bold">PALESTINE</p>
+                </div>
+                <div class="bg-white p-2 rounded-lg text-center">
+                    <img alt="Flag of Jordan" class="mx-auto mb-2" height="100" src="https://storage.googleapis.com/a1aa/image/YpEOauKfLZ26_nhaStIQCqNptiRvxgLwdyANLUQM-l8.jpg" width="100"/>
+                    <p class="text-red-700 font-bold">JORDAN</p>
+                </div>
+                <div class="bg-white p-2 rounded-lg text-center">
+                    <img alt="Flag of Lebanon" class="mx-auto mb-2" height="100" src="https://storage.googleapis.com/a1aa/image/4TVSRjxS5d8U4J5HMRnbhYICFbdYuuiC1Rm1o6KlFHY.jpg" width="100"/>
+                    <p class="text-red-700 font-bold">LEBANON</p>
+                </div>
+                <div class="bg-white p-2 rounded-lg text-center">
+                    <img alt="Flag of Syria" class="mx-auto mb-2" height="100" src="https://storage.googleapis.com/a1aa/image/A4qXkaOCU1mvhPVSna7MvoechkALaWLPMJR4VitZZik.jpg" width="100"/>
+                    <p class="text-red-700 font-bold">SYRIA</p>
+                </div>
+                <div class="bg-white p-2 rounded-lg text-center">
+                    <img alt="Flag of Iraq" class="mx-auto mb-2" height="100" src="https://storage.googleapis.com/a1aa/image/nRt1bhbn2jEnsZlhFFzpF0kynwXaN1Och7G2u9R9vi0.jpg" width="100"/>
+                    <p class="text-red-700 font-bold">IRAQ</p>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="bg-[#3b2a00] rounded-lg overflow-hidden">
-     <img alt="Soccer player in action" class="w-full h-48 object-cover" height="300" src="https://storage.googleapis.com/a1aa/image/szPVvdXJGDwA8Sm4QCqR6s_qe8egjCKl55p6sZWyRUQ.jpg" width="600"/>
-     <div class="p-4 flex items-center justify-between">
-      <div class="flex items-center space-x-2">
-       <span class="bg-[#ff7f50] text-white px-2 py-1 rounded">
-        beIN SPORTS 3
-       </span>
-       <a href="#video-player" onclick="playVideo('https://www.example.com/video3.mp4')">
-        <i class="fas fa-play text-[#ff7f50]">
-        </i>
-       </a>
-      </div>
-      <span class="text-gray-400">
-       Channel 3
-      </span>
-      <i class="fas fa-heart text-[#ff7f50]">
-      </i>
-     </div>
+</div>
+
+<!-- Video Player Modal -->
+<div id="videoPlayerModal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center hidden">
+    <div class="bg-white rounded-lg p-4 w-11/12 md:w-1/2">
+        <div class="flex justify-between items-center mb-4">
+            <h2 id="channelName" class="text-xl font-bold text-red-700"></h2>
+            <button onclick="closeVideoPlayer()" class="text-red-700 text-2xl">&times;</button>
+        </div>
+        <div class="mb-4">
+            <img id="channelLogo" class="mx-auto mb-2" height="100" width="100" alt="Channel Logo"/>
+        </div>
+        <video id="videoPlayer" class="w-full" controls>
+            <source id="videoSource" type="application/x-mpegURL">
+            Your browser does not support the video tag.
+        </video>
     </div>
-    <div class="bg-[#3b2a00] rounded-lg overflow-hidden">
-     <img alt="Soccer player in action" class="w-full h-48 object-cover" height="300" src="https://storage.googleapis.com/a1aa/image/szPVvdXJGDwA8Sm4QCqR6s_qe8egjCKl55p6sZWyRUQ.jpg" width="600"/>
-     <div class="p-4 flex items-center justify-between">
-      <div class="flex items-center space-x-2">
-       <span class="bg-[#00bfff] text-white px-2 py-1 rounded">
-        beIN SPORTS 4
-       </span>
-       <a href="#video-player" onclick="playVideo('https://www.example.com/video4.mp4')">
-        <i class="fas fa-play text-[#ff7f50]">
-        </i>
-       </a>
-      </div>
-      <span class="text-gray-400">
-       Channel 4
-      </span>
-      <i class="fas fa-heart text-[#ff7f50]">
-      </i>
-     </div>
-    </div>
-    <div class="bg-[#3b2a00] rounded-lg overflow-hidden">
-     <img alt="Soccer player in action" class="w-full h-48 object-cover" height="300" src="https://storage.googleapis.com/a1aa/image/szPVvdXJGDwA8Sm4QCqR6s_qe8egjCKl55p6sZWyRUQ.jpg" width="600"/>
-     <div class="p-4 flex items-center justify-between">
-      <div class="flex items-center space-x-2">
-       <span class="bg-[#ff7f50] text-white px-2 py-1 rounded">
-        beIN SPORTS 5
-       </span>
-       <a href="#video-player" onclick="playVideo('https://www.example.com/video5.mp4')">
-        <i class="fas fa-play text-[#ff7f50]">
-        </i>
-       </a>
-      </div>
-      <span class="text-gray-400">
-       Channel 5
-      </span>
-      <i class="fas fa-heart text-[#ff7f50]">
-      </i>
-     </div>
-    </div>
-    <div class="bg-[#3b2a00] rounded-lg overflow-hidden">
-     <img alt="Soccer player in action" class="w-full h-48 object-cover" height="300" src="https://storage.googleapis.com/a1aa/image/szPVvdXJGDwA8Sm4QCqR6s_qe8egjCKl55p6sZWyRUQ.jpg" width="600"/>
-     <div class="p-4 flex items-center justify-between">
-      <div class="flex items-center space-x-2">
-       <span class="bg-[#00bfff] text-white px-2 py-1 rounded">
-        beIN SPORTS 6
-       </span>
-       <a href="#video-player" onclick="playVideo('https://www.example.com/video6.mp4')">
-        <i class="fas fa-play text-[#ff7f50]">
-        </i>
-       </a>
-      </div>
-      <span class="text-gray-400">
-       Channel 6
-      </span>
-      <i class="fas fa-heart text-[#ff7f50]">
-      </i>
-     </div>
-    </div>
-    <div class="bg-[#3b2a00] rounded-lg overflow-hidden">
-     <img alt="Soccer player in action" class="w-full h-48 object-cover" height="300" src="https://storage.googleapis.com/a1aa/image/szPVvdXJGDwA8Sm4QCqR6s_qe8egjCKl55p6sZWyRUQ.jpg" width="600"/>
-     <div class="p-4 flex items-center justify-between">
-      <div class="flex items-center space-x-2">
-       <span class="bg-[#ff7f50] text-white px-2 py-1 rounded">
-        beIN SPORTS 7
-       </span>
-       <a href="#video-player" onclick="playVideo('https://www.example.com/video7.mp4')">
-        <i class="fas fa-play text-[#ff7f50]">
-        </i>
-       </a>
-      </div>
-      <span class="text-gray-400">
-       Channel 7
-      </span>
-      <i class="fas fa-heart text-[#ff7f50]">
-      </i>
-     </div>
-    </div>
-    <div class="bg-[#3b2a00] rounded-lg overflow-hidden">
-     <img alt="Soccer player in action" class="w-full h-48 object-cover" height="300" src="https://storage.googleapis.com/a1aa/image/szPVvdXJGDwA8Sm4QCqR6s_qe8egjCKl55p6sZWyRUQ.jpg" width="600"/>
-     <div class="p-4 flex items-center justify-between">
-      <div class="flex items-center space-x-2">
-       <span class="bg-[#00bfff] text-white px-2 py-1 rounded">
-        beIN SPORTS 8
-       </span>
-       <a href="#video-player" onclick="playVideo('https://www.example.com/video8.mp4')">
-        <i class="fas fa-play text-[#ff7f50]">
-        </i>
-       </a>
-      </div>
-      <span class="text-gray-400">
-       Channel 8
-      </span>
-      <i class="fas fa-heart text-[#ff7f50]">
-      </i>
-     </div>
-    </div>
-    <div class="bg-[#3b2a00] rounded-lg overflow-hidden">
-     <img alt="Soccer player in action" class="w-full h-48 object-cover" height="300" src="https://storage.googleapis.com/a1aa/image/szPVvdXJGDwA8Sm4QCqR6s_qe8egjCKl55p6sZWyRUQ.jpg" width="600"/>
-     <div class="p-4 flex items-center justify-between">
-      <div class="flex items-center space-x-2">
-       <span class="bg-[#ff7f50] text-white px-2 py-1 rounded">
-        beIN SPORTS 9
-       </span>
-       <a href="#video-player" onclick="playVideo('https://www.example.com/video9.mp4')">
-        <i class="fas fa-play text-[#ff7f50]">
-        </i>
-       </a>
-      </div>
-      <span class="text-gray-400">
-       Channel 9
-      </span>
-      <i class="fas fa-heart text-[#ff7f50]">
-      </i>
-     </div>
-    </div>
-    <div class="bg-[#3b2a00] rounded-lg overflow-hidden">
-     <img alt="Soccer player in action" class="w-full h-48 object-cover" height="300" src="https://storage.googleapis.com/a1aa/image/szPVvdXJGDwA8Sm4QCqR6s_qe8egjCKl55p6sZWyRUQ.jpg" width="600"/>
-     <div class="p-4 flex items-center justify-between">
-      <div class="flex items-center space-x-2">
-       <span class="bg-[#00bfff] text-white px-2 py-1 rounded">
-        beIN SPORTS 10
-       </span>
-       <a href="#video-player" onclick="playVideo('https://www.example.com/video10.mp4')">
-        <i class="fas fa-play text-[#ff7f50]">
-        </i>
-       </a>
-      </div>
-      <span class="text-gray-400">
-       Channel 10
-      </span>
-      <i class="fas fa-heart text-[#ff7f50]">
-      </i>
-     </div>
-    </div>
-   </div>
-   <div id="video-player" class="mt-8">
-    <video class="w-full" controls id="video">
-     <source id="video-source" src="" type="video/mp4"/>
-     Your browser does not support the video tag.
-    </video>
-   </div>
-  </main>
-  <script>
-   function playVideo(url) {
-     const video = document.getElementById('video');
-     const videoSource = document.getElementById('video-source');
-     videoSource.src = url;
-     video.load();
-     video.play();
-   }
-  </script>
- </body>
+</div>
+
+<script>
+    function openVideoPlayer(channel, url, logo) {
+        document.getElementById('channelName').innerText = channel;
+        document.getElementById('videoSource').src = url;
+        document.getElementById('channelLogo').src = logo;
+        document.getElementById('videoPlayer').load();
+        document.getElementById('videoPlayerModal').classList.remove('hidden');
+    }
+
+    function closeVideoPlayer() {
+        document.getElementById('videoPlayerModal').classList.add('hidden');
+        document.getElementById('videoPlayer').pause();
+    }
+</script>
+</body>
 </html>
