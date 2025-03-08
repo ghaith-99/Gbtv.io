@@ -42,12 +42,17 @@ let currentIndex = 0;
 
 function showPlayers(category) {
     currentCategory = category;
-    currentIndex = 0;
-    displayPlayer();
+    currentIndex = 0;  // إعادة تعيين الفهرس عند تغيير الفئة
+    displayPlayer();   // عرض اللاعب الأول في الفئة الجديدة
 }
 
 function displayPlayer() {
     const player = players[currentCategory][currentIndex];
+
+    if (!player) {
+        document.getElementById("player-info").classList.add("hidden");
+        return;
+    }
 
     document.getElementById("player-name").textContent = player.name;
     document.getElementById("player-position").textContent = player.position;
