@@ -1,13 +1,21 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
     text-align: center;
+    background-color: #f4f4f4;
+    direction: rtl;
 }
 
 .container {
-    max-width: 800px;
-    margin: 0 auto;
+    max-width: 600px;
+    margin: auto;
     padding: 20px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+h1 {
+    color: #333;
 }
 
 .buttons {
@@ -15,18 +23,41 @@ body {
 }
 
 button {
-    padding: 10px 20px;
+    padding: 10px 15px;
     margin: 5px;
+    border: none;
+    background: #007BFF;
+    color: white;
     font-size: 16px;
     cursor: pointer;
+    border-radius: 5px;
 }
 
-.info {
-    margin-top: 20px;
+button:hover {
+    background: #0056b3;
+}
+
+.hidden {
     display: none;
 }
 
-.info img {
-    max-width: 100%;
-    height: auto;
+#player-info {
+    margin-top: 20px;
+}
+
+#player-image {
+    width: 100%;
+    max-width: 250px;
+    border-radius: 10px;
+}
+
+.details {
+    text-align: right;
+    margin-top: 10px;
+}
+
+.details p {
+    background: #ddd;
+    padding: 5px;
+    border-radius: 5px;
 }
