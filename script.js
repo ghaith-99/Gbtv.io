@@ -42,7 +42,7 @@ let currentIndex = 0;
 
 function showPlayers(category) {
     currentCategory = category;
-    currentIndex = 0;  // إعادة تعيين الفهرس عند تغيير الفئة
+    currentIndex = 0; // إعادة تعيين الفهرس عند تغيير الفئة
     displayPlayer();   // عرض اللاعب الأول في الفئة الجديدة
 }
 
@@ -80,3 +80,18 @@ function changePlayer() {
     currentIndex = (currentIndex + 1) % players[currentCategory].length;
     displayPlayer();
 }
+
+// إضافة Event Listeners للأزرار
+document.getElementById("retired-button").addEventListener("click", function() {
+    showPlayers('retired');
+});
+
+document.getElementById("current-button").addEventListener("click", function() {
+    showPlayers('current');
+});
+
+document.getElementById("coaches-button").addEventListener("click", function() {
+    showPlayers('coaches');
+});
+
+document.getElementById("change-player-button").addEventListener("click", changePlayer);
