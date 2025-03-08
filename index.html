@@ -16,7 +16,7 @@
             margin-top: 10px;
         }
         img {
-            width: 200px;
+            width: 400px; /* حجم الصورة أكبر */
             height: auto;
             border-radius: 10px;
         }
@@ -26,12 +26,32 @@
             font-size: 16px;
             cursor: pointer;
         }
+        #selection {
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
 
     <h1>لعبة اللاعب</h1>
-    <img id="playerImage" src="" alt="صورة اللاعب">
+    
+    <div id="selection">
+        <h2>اختر نوع اللاعب</h2>
+        <button id="retiredButton">معتزلين</button>
+        <button id="coachesButton">مدربين</button>
+        <button id="playersButton">لاعبين</button>
+    </div>
+
+    <div id="playerOptions" style="display: none;">
+        <h2>اختر طريقة العرض</h2>
+        <button id="randomButton">عشوائي</button>
+        <button id="byPositionButton">حسب المركز</button>
+        <button id="byCountryButton">حسب الدولة</button>
+        <button id="byClubButton">حسب النادي</button>
+        <button id="byLeagueButton">حسب الدوري</button>
+    </div>
+
+    <img id="playerImage" src="" alt="صورة اللاعب" style="display: none;">
     <div class="player-info" id="playerInfo">
         <h2 id="playerName"></h2>
         <p><strong>المركز:</strong> <span id="playerPosition"></span></p>
@@ -42,8 +62,8 @@
         <p><strong>الوزن:</strong> <span id="playerWeight"></span></p>
         <p><strong>الأندية السابقة:</strong> <span id="playerPreviousClubs"></span></p>
     </div>
-    <button id="toggleInfoButton">إظهار المعلومات</button>
-    <button id="changePlayerButton">تغيير اللاعب</button>
+    <button id="toggleInfoButton" style="display: none;">إظهار المعلومات</button>
+    <button id="changePlayerButton" style="display: none;">تغيير اللاعب</button>
 
     <script>
         const players = [
@@ -77,12 +97,84 @@
                 nationality: "برتغالي",
                 height: "187 سم",
                 weight: "83 كغ",
-                previousClubs: "سبورتينغ لشبونة، مانشستر يونايتد، ريال مدريد، يوفنتوس",
+                previousClubs: "سبورتينغ لشبونة، مانش ستر يونايتد، ريال مدريد، يوفنتوس",
                 image: "https://upload.wikimedia.org/wikipedia/commons/8/8c/Cristiano_Ronaldo_2018.jpg"
+            },
+            {
+                name: "نيمار جونيور",
+                position: "مهاجم",
+                age: 31,
+                club: "الهلال",
+                nationality: "برازيلي",
+                height: "175 سم",
+                weight: "68 كغ",
+                previousClubs: "سانتوس، برشلونة، باريس سان جيرمان",
+                image: "https://upload.wikimedia.org/wikipedia/commons/9/9c/Neymar_2018.jpg"
+            },
+            {
+                name: "كيليان مبابي",
+                position: "مهاجم",
+                age: 24,
+                club: "باريس سان جيرمان",
+                nationality: "فرنسي",
+                height: "178 سم",
+                weight: "73 كغ",
+                previousClubs: "موناكو",
+                image: "https://upload.wikimedia.org/wikipedia/commons/3/3c/Kylian_Mbapp%C3%A9_2018.jpg"
+            },
+            {
+                name: "رونالدينيو",
+                position: "مهاجم",
+                age: 43,
+                club: "اعتزل",
+                nationality: "برازيلي",
+                height: "181 سم",
+                weight: "80 كغ",
+                previousClubs: "غريميو، باريس سان جيرمان، برشلونة، ميلان",
+                image: "https://upload.wikimedia.org/wikipedia/commons/9/9f/Ronaldinho_2018.jpg"
             }
         ];
 
         let currentPlayerIndex = 0;
+
+        document.getElementById("retiredButton").addEventListener("click", function() {
+            // هنا يمكن إضافة منطق لعرض المعتزلين
+            alert("عرض المعتزلين");
+        });
+
+        document.getElementById("coachesButton").addEventListener("click", function() {
+            // هنا يمكن إضافة منطق لعرض المدربين
+            alert("عرض المدربين");
+        });
+
+        document.getElementById("playersButton").addEventListener("click", function() {
+            document.getElementById("playerOptions").style.display = "block";
+        });
+
+        document.getElementById("randomButton").addEventListener("click", function() {
+            currentPlayerIndex = Math.floor(Math.random() * players.length);
+            displayPlayer();
+        });
+
+        document.getElementById("byPositionButton").addEventListener("click", function() {
+            // هنا يمكن إضافة منطق لعرض اللاعبين حسب المركز
+            alert("عرض اللاعبين حسب المركز");
+        });
+
+        document.getElementById("byCountryButton").addEventListener("click", function() {
+            // هنا يمكن إضافة منطق لعرض اللاعبين حسب الدولة
+            alert("عرض اللاعبين حسب الدولة");
+        });
+
+        document.getElementById("byClubButton").addEventListener("click", function() {
+            // هنا يمكن إضافة منطق لعرض اللاعبين حسب النادي
+            alert("عرض اللاعبين حسب النادي");
+        });
+
+        document.getElementById("byLeagueButton").addEventListener("click", function() {
+            // هنا يمكن إضافة منطق لعرض اللاعبين حسب الدوري
+            alert("عرض اللاعبين حسب الدوري");
+        });
 
         function displayPlayer() {
             const player = players[currentPlayerIndex];
@@ -95,11 +187,15 @@
             document.getElementById("playerHeight").innerText = player.height;
             document.getElementById("playerWeight").innerText = player.weight;
             document.getElementById("playerPreviousClubs").innerText = player.previousClubs;
+            document.getElementById("playerImage").style.display = "block"; // عرض الصورة
+            document.getElementById("playerInfo").style.display = "block"; // عرض المعلومات
+            document.getElementById("toggleInfoButton").style.display = "block"; // إظهار زر إظهار المعلومات
+            document.getElementById("changePlayerButton").style.display = "block"; // إظهار زر تغيير اللاعب
         }
 
         document.getElementById("toggleInfoButton").addEventListener("click", function() {
-            const infoDiv = document.getElementById(" playerInfo");
-            if (infoDiv.style.display === "none" || infoDiv.style.display === "") {
+            const infoDiv = document.getElementById("playerInfo");
+            if (infoDiv.style.display === "none") {
                 infoDiv.style.display = "block";
                 this.innerText = "إخفاء المعلومات";
             } else {
@@ -111,10 +207,13 @@
         document.getElementById("changePlayerButton").addEventListener("click", function() {
             currentPlayerIndex = (currentPlayerIndex + 1) % players.length;
             displayPlayer();
+            document.getElementById("playerInfo").style.display = "none"; // إخفاء المعلومات عند تغيير اللاعب
+            document.getElementById("toggleInfoButton").innerText = "إظهار المعلومات"; // إعادة تعيين النص
         });
 
         // عرض اللاعب الأول عند تحميل الصفحة
         displayPlayer();
     </script>
+
 </body>
 </html>
