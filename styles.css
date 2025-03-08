@@ -1,21 +1,24 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     text-align: center;
-    background-color: #f4f4f4;
+    background-color: #222;
+    color: white;
     direction: rtl;
+    margin: 0;
+    padding: 0;
 }
 
 .container {
     max-width: 600px;
-    margin: auto;
+    margin: 50px auto;
     padding: 20px;
-    background: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background: #333;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
     border-radius: 10px;
 }
 
 h1 {
-    color: #333;
+    color: #FFD700;
 }
 
 .buttons {
@@ -26,29 +29,39 @@ button {
     padding: 10px 15px;
     margin: 5px;
     border: none;
-    background: #007BFF;
-    color: white;
+    background: #FFD700;
+    color: #222;
     font-size: 16px;
     cursor: pointer;
     border-radius: 5px;
+    transition: 0.3s;
 }
 
 button:hover {
-    background: #0056b3;
+    background: #ffcc00;
 }
 
 .hidden {
     display: none;
 }
 
-#player-info {
+.player-card {
     margin-top: 20px;
+    padding: 20px;
+    background: #444;
+    border-radius: 10px;
+    transition: 0.5s;
 }
 
 #player-image {
     width: 100%;
     max-width: 250px;
     border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+#player-image:hover {
+    transform: scale(1.05);
 }
 
 .details {
@@ -57,7 +70,7 @@ button:hover {
 }
 
 .details p {
-    background: #ddd;
-    padding: 5px;
+    background: #666;
+    padding: 8px;
     border-radius: 5px;
 }
