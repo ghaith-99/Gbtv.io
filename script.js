@@ -6,33 +6,53 @@ const players = {
             age: "36",
             height: "170 سم",
             weight: "72 كجم",
-            clubLogo: "images/inter-miami.png",
-            previousClubsLogos: [
-                "images/barcelona.png",
-                "images/psg.png"
-            ],
-            leagueLogo: "images/mls.png",
-            nationalityFlag: "images/argentina.png",
-            image: "images/messi.png"
+            clubLogo: "messi-club.png",
+            leagueLogo: "laliga.png",
+            countryFlag: "argentina.png",
+            previousClubs: "برشلونة, باريس سان جيرمان",
+            image: "messi.png",
+            extra: "فاز بالكرة الذهبية 8 مرات"
+        },
+        {
+            name: "كريستيانو رونالدو",
+            position: "مهاجم",
+            age: "39",
+            height: "187 سم",
+            weight: "83 كجم",
+            clubLogo: "ronaldo-club.png",
+            leagueLogo: "saudi-league.png",
+            countryFlag: "portugal.png",
+            previousClubs: "مانشستر يونايتد, ريال مدريد, يوفنتوس",
+            image: "ronaldo.png",
+            extra: "هداف دوري أبطال أوروبا التاريخي"
         }
     ],
     retired: [
         {
-            name: "زين الدين زيدان",
-            position: "وسط مهاجم",
-            age: "51",
-            height: "185 سم",
+            name: "رونالدينيو",
+            position: "وسط هجومي",
+            age: "43",
+            height: "182 سم",
             weight: "80 كجم",
-            clubLogo: "images/real-madrid.png",
-            previousClubsLogos: [
-                "images/cannes.png",
-                "images/bordeaux.png",
-                "images/juventus.png",
-                "images/real-madrid.png"
-            ],
-            leagueLogo: "images/laliga.png",
-            nationalityFlag: "images/france.png",
-            image: "images/zidane.png"
+            clubLogo: "barcelona.png",
+            leagueLogo: "laliga.png",
+            countryFlag: "brazil.png",
+            previousClubs: "برشلونة, ميلان",
+            image: "ronaldinho.png",
+            extra: "فاز بكأس العالم 2002"
+        }
+    ],
+    coaches: [
+        {
+            name: "بيب غوارديولا",
+            position: "مدرب",
+            age: "53",
+            clubLogo: "man-city.png",
+            leagueLogo: "premier-league.png",
+            countryFlag: "spain.png",
+            previousClubs: "برشلونة, بايرن ميونيخ",
+            image: "pep.png",
+            extra: "فاز بدوري الأبطال 3 مرات"
         }
     ]
 };
@@ -40,19 +60,8 @@ const players = {
 let currentCategory = "current";
 let currentIndex = 0;
 
-function showPlayers(category) {
-    currentCategory = category;
-    currentIndex = 0; // إعادة تعيين الفهرس عند تغيير الفئة
-    displayPlayer();   // عرض اللاعب الأول في الفئة الجديدة
-}
-
 function displayPlayer() {
     const player = players[currentCategory][currentIndex];
-
-    if (!player) {
-        document.getElementById("player-info").classList.add("hidden");
-        return;
-    }
 
     document.getElementById("player-name").textContent = player.name;
     document.getElementById("player-position").textContent = player.position;
@@ -61,37 +70,25 @@ function displayPlayer() {
     document.getElementById("player-weight").textContent = player.weight;
     document.getElementById("player-club-logo").src = player.clubLogo;
     document.getElementById("player-league-logo").src = player.leagueLogo;
-    document.getElementById("player-nationality-flag").src = player.nationalityFlag;
+    document.getElementById("player-country-flag").src = player.countryFlag;
+    document.getElementById("previous-clubs").textContent = player.previousClubs;
     document.getElementById("player-image").src = player.image;
-
-    const previousClubsContainer = document.getElementById("player-previous-clubs-logos");
-    previousClubsContainer.innerHTML = "";
-    player.previousClubsLogos.forEach(logo => {
-        const img = document.createElement("img");
-        img.src = logo;
-        img.classList.add("club-logo");
-        previousClubsContainer.appendChild(img);
-    });
-
-    document.getElementById("player-info").classList.remove("hidden");
+    document.getElementById("extra-details").textContent = player.extra;
 }
 
-function changePlayer() {
+document.getElementById("next-player").addEventListener("click", function() {
     currentIndex = (currentIndex + 1) % players[currentCategory].length;
     displayPlayer();
-}
-
-// إضافة Event Listeners للأزرار
-document.getElementById("retired-button").addEventListener("click", function() {
-    showPlayers('retired');
 });
 
-document.getElementById("current-button").addEventListener("click", function() {
-    showPlayers('current');
+document.getElementById("toggle-info").addEventListener("click", function() {
+    document.getElementById("player-extra-info").classList.toggle("hidden");
 });
 
-document.getElementById("coaches-button").addEventListener("click", function() {
-    showPlayers('coaches');
+document.getElementById("category-selector").addEventListener("change", function(event) {
+    currentCategory = event.target.value;
+    currentIndex = 0;
+    displayPlayer();
 });
 
-document.getElementById("change-player-button").addEventListener("click", changePlayer);
+displayPlayer();
