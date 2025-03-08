@@ -6,11 +6,11 @@ const players = {
             age: "36",
             height: "170 سم",
             weight: "72 كجم",
-            clubLogo: "messi-club.png",
-            leagueLogo: "laliga.png",
-            countryFlag: "argentina.png",
+            clubLogo: "images/inter-miami.png",
+            leagueLogo: "images/mls.png",
+            countryFlag: "images/argentina.png",
             previousClubs: "برشلونة, باريس سان جيرمان",
-            image: "messi.png"
+            image: "images/messi.png"
         },
         {
             name: "كريستيانو رونالدو",
@@ -18,11 +18,11 @@ const players = {
             age: "39",
             height: "187 سم",
             weight: "83 كجم",
-            clubLogo: "ronaldo-club.png",
-            leagueLogo: "saudi-league.png",
-            countryFlag: "portugal.png",
+            clubLogo: "images/ronaldo-club.png",
+            leagueLogo: "images/saudi-league.png",
+            countryFlag: "images/portugal.png",
             previousClubs: "مانشستر يونايتد, ريال مدريد, يوفنتوس",
-            image: "ronaldo.png"
+            image: "images/ronaldo.png"
         }
     ],
     retired: [
@@ -32,11 +32,11 @@ const players = {
             age: "43",
             height: "182 سم",
             weight: "80 كجم",
-            clubLogo: "barcelona.png",
-            leagueLogo: "laliga.png",
-            countryFlag: "brazil.png",
+            clubLogo: "images/barcelona.png",
+            leagueLogo: "images/laliga.png",
+            countryFlag: "images/brazil.png",
             previousClubs: "برشلونة, ميلان",
-            image: "ronaldinho.png"
+            image: "images/ronaldinho.png"
         }
     ],
     coaches: [
@@ -44,11 +44,11 @@ const players = {
             name: "بيب غوارديولا",
             position: "مدرب",
             age: "53",
-            clubLogo: "man-city.png",
-            leagueLogo: "premier-league.png",
-            countryFlag: "spain.png",
+            clubLogo: "images/man-city.png",
+            leagueLogo: "images/premier-league.png",
+            countryFlag: "images/spain.png",
             previousClubs: "برشلونة, بايرن ميونيخ",
-            image: "pep.png"
+            image: "images/pep.png"
         }
     ]
 };
