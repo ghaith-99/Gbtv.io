@@ -11,7 +11,7 @@ const players = {
             club: "ريال مدريد (مدرب سابق)",
             previousClubs: "كان، بوردو، يوفنتوس، ريال مدريد",
             league: "الدوري الإسباني",
-            image: "https://upload.wikimedia.org/wikipedia/commons/6/6e/Zinedine_Zidane_2013_%28cropped%29.jpg"
+            image: "images/zidane.png"
         }
     ],
     current: [
@@ -26,7 +26,7 @@ const players = {
             club: "إنتر ميامي",
             previousClubs: "برشلونة، باريس سان جيرمان",
             league: "الدوري الأمريكي",
-            image: "https://upload.wikimedia.org/wikipedia/commons/b/b8/Lionel_Messi_WC2022.jpg"
+            image: "images/messi.png"
         }
     ],
     coaches: [
@@ -41,7 +41,7 @@ const players = {
             club: "مانشستر سيتي",
             previousClubs: "برشلونة، بايرن ميونيخ",
             league: "الدوري الإنجليزي",
-            image: "https://upload.wikimedia.org/wikipedia/commons/2/26/Pep_Guardiola_2017_%28cropped%29.jpg"
+            image: "images/pep.png"
         }
     ]
 };
