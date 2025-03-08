@@ -10,8 +10,7 @@ const players = {
             leagueLogo: "laliga.png",
             countryFlag: "argentina.png",
             previousClubs: "برشلونة, باريس سان جيرمان",
-            image: "messi.png",
-            extra: "فاز بالكرة الذهبية 8 مرات"
+            image: "messi.png"
         },
         {
             name: "كريستيانو رونالدو",
@@ -23,8 +22,7 @@ const players = {
             leagueLogo: "saudi-league.png",
             countryFlag: "portugal.png",
             previousClubs: "مانشستر يونايتد, ريال مدريد, يوفنتوس",
-            image: "ronaldo.png",
-            extra: "هداف دوري أبطال أوروبا التاريخي"
+            image: "ronaldo.png"
         }
     ],
     retired: [
@@ -38,8 +36,7 @@ const players = {
             leagueLogo: "laliga.png",
             countryFlag: "brazil.png",
             previousClubs: "برشلونة, ميلان",
-            image: "ronaldinho.png",
-            extra: "فاز بكأس العالم 2002"
+            image: "ronaldinho.png"
         }
     ],
     coaches: [
@@ -51,8 +48,7 @@ const players = {
             leagueLogo: "premier-league.png",
             countryFlag: "spain.png",
             previousClubs: "برشلونة, بايرن ميونيخ",
-            image: "pep.png",
-            extra: "فاز بدوري الأبطال 3 مرات"
+            image: "pep.png"
         }
     ]
 };
@@ -73,22 +69,25 @@ function displayPlayer() {
     document.getElementById("player-country-flag").src = player.countryFlag;
     document.getElementById("previous-clubs").textContent = player.previousClubs;
     document.getElementById("player-image").src = player.image;
-    document.getElementById("extra-details").textContent = player.extra;
 }
 
+// تبديل اللاعب عند الضغط على الزر
 document.getElementById("next-player").addEventListener("click", function() {
     currentIndex = (currentIndex + 1) % players[currentCategory].length;
     displayPlayer();
 });
 
+// إظهار وإخفاء المعلومات
 document.getElementById("toggle-info").addEventListener("click", function() {
-    document.getElementById("player-extra-info").classList.toggle("hidden");
+    document.querySelector(".player-details").classList.toggle("hidden");
 });
 
+// تبديل الفئة من القائمة المنسدلة
 document.getElementById("category-selector").addEventListener("change", function(event) {
     currentCategory = event.target.value;
     currentIndex = 0;
     displayPlayer();
 });
 
+// عرض اللاعب الأول عند تحميل الصفحة
 displayPlayer();
