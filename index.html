@@ -7,16 +7,40 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
     <div class="container">
         <h1>تحدي كرة القدم</h1>
+        
         <div class="buttons">
-            <button onclick="showPlayers('retired')">لاعبين متعزلين</button>
-            <button onclick="showPlayers('current')">لاعبين حاليين</button>
-            <button onclick="showPlayers('coaches')">مدربين</button>
+            <button onclick="showPlayers('retired')">لاعبون معتزلون</button>
+            <button onclick="showPlayers('current')">لاعبون حاليون</button>
+            <button onclick="showCoaches()">مدربون</button>
         </div>
-        <input type="text" id="search" placeholder="ابحث عن لاعب أو مدرب" onkeyup="searchPlayers()">
-        <div id="info" class="info"></div>
+
+        <div id="player-info" class="hidden">
+            <img id="player-image" src="" alt="صورة اللاعب">
+            <h2 id="player-name"></h2>
+            <div class="details">
+                <p><strong>المركز:</strong> <span id="player-position"></span></p>
+                <p><strong>العمر:</strong> <span id="player-age"></span></p>
+                <p><strong>الطول:</strong> <span id="player-height"></span></p>
+                <p><strong>الوزن:</strong> <span id="player-weight"></span></p>
+                <p><strong>رقم اللاعب مع النادي:</strong> <span id="player-club-number"></span></p>
+                <p><strong>رقم اللاعب مع المنتخب:</strong> <span id="player-national-number"></span></p>
+                <p><strong>النادي الحالي:</strong> <span id="player-club"></span></p>
+                <p><strong>الأندية السابقة:</strong> <span id="player-previous-clubs"></span></p>
+                <p><strong>الدوري:</strong> <span id="player-league"></span></p>
+            </div>
+
+            <div class="buttons">
+                <button onclick="toggleDetails()">إظهار / إخفاء المعلومات</button>
+                <button onclick="changePlayer()">تغيير اللاعب</button>
+            </div>
+        </div>
+
     </div>
+
     <script src="script.js"></script>
+
 </body>
 </html>
