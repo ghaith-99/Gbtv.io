@@ -1,19 +1,4 @@
 const players = {
-    retired: [
-        {
-            name: "زين الدين زيدان",
-            position: "وسط مهاجم",
-            age: "51",
-            height: "185 سم",
-            weight: "80 كجم",
-            clubNumber: "5",
-            nationalNumber: "10",
-            club: "ريال مدريد (مدرب سابق)",
-            previousClubs: "كان، بوردو، يوفنتوس، ريال مدريد",
-            league: "الدوري الإسباني",
-            image: "images/zidane.png"
-        }
-    ],
     current: [
         {
             name: "ليونيل ميسي",
@@ -21,32 +6,38 @@ const players = {
             age: "36",
             height: "170 سم",
             weight: "72 كجم",
-            clubNumber: "10",
-            nationalNumber: "10",
-            club: "إنتر ميامي",
-            previousClubs: "برشلونة، باريس سان جيرمان",
-            league: "الدوري الأمريكي",
+            clubLogo: "images/inter-miami.png",
+            previousClubsLogos: [
+                "images/barcelona.png",
+                "images/psg.png"
+            ],
+            leagueLogo: "images/mls.png",
+            nationalityFlag: "images/argentina.png",
             image: "images/messi.png"
         }
     ],
-    coaches: [
+    retired: [
         {
-            name: "بيب غوارديولا",
-            position: "مدرب",
-            age: "53",
-            height: "180 سم",
-            weight: "75 كجم",
-            clubNumber: "-",
-            nationalNumber: "-",
-            club: "مانشستر سيتي",
-            previousClubs: "برشلونة، بايرن ميونيخ",
-            league: "الدوري الإنجليزي",
-            image: "images/pep.png"
+            name: "زين الدين زيدان",
+            position: "وسط مهاجم",
+            age: "51",
+            height: "185 سم",
+            weight: "80 كجم",
+            clubLogo: "images/real-madrid.png",
+            previousClubsLogos: [
+                "images/cannes.png",
+                "images/bordeaux.png",
+                "images/juventus.png",
+                "images/real-madrid.png"
+            ],
+            leagueLogo: "images/laliga.png",
+            nationalityFlag: "images/france.png",
+            image: "images/zidane.png"
         }
     ]
 };
 
-let currentCategory = "retired";
+let currentCategory = "current";
 let currentIndex = 0;
 
 function showPlayers(category) {
@@ -55,31 +46,29 @@ function showPlayers(category) {
     displayPlayer();
 }
 
-function showCoaches() {
-    currentCategory = "coaches";
-    currentIndex = 0;
-    displayPlayer();
-}
-
 function displayPlayer() {
     const player = players[currentCategory][currentIndex];
+
     document.getElementById("player-name").textContent = player.name;
     document.getElementById("player-position").textContent = player.position;
     document.getElementById("player-age").textContent = player.age;
     document.getElementById("player-height").textContent = player.height;
     document.getElementById("player-weight").textContent = player.weight;
-    document.getElementById("player-club-number").textContent = player.clubNumber;
-    document.getElementById("player-national-number").textContent = player.nationalNumber;
-    document.getElementById("player-club").textContent = player.club;
-    document.getElementById("player-previous-clubs").textContent = player.previousClubs;
-    document.getElementById("player-league").textContent = player.league;
+    document.getElementById("player-club-logo").src = player.clubLogo;
+    document.getElementById("player-league-logo").src = player.leagueLogo;
+    document.getElementById("player-nationality-flag").src = player.nationalityFlag;
     document.getElementById("player-image").src = player.image;
 
-    document.getElementById("player-info").classList.remove("hidden");
-}
+    const previousClubsContainer = document.getElementById("player-previous-clubs-logos");
+    previousClubsContainer.innerHTML = "";
+    player.previousClubsLogos.forEach(logo => {
+        const img = document.createElement("img");
+        img.src = logo;
+        img.classList.add("club-logo");
+        previousClubsContainer.appendChild(img);
+    });
 
-function toggleDetails() {
-    document.querySelector(".details").classList.toggle("hidden");
+    document.getElementById("player-info").classList.remove("hidden");
 }
 
 function changePlayer() {
