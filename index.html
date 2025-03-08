@@ -10,16 +10,11 @@
 
     <header>
         <h1>تحدي كرة القدم</h1>
-        <select id="category-selector">
-            <option value="current">لاعبون حاليون</option>
-            <option value="retired">لاعبون معتزلون</option>
-            <option value="coaches">مدربون</option>
-        </select>
     </header>
 
     <div class="player-container">
         <div class="player-card">
-            <img id="player-image" src="" alt="صورة اللاعب">
+            <img id="player-image" src="" alt="صورة اللاعب" class="clickable">
             <div class="player-details">
                 <h2 id="player-name"></h2>
                 <p><strong>المركز:</strong> <span id="player-position"></span></p>
@@ -29,7 +24,8 @@
                 <p><strong>النادي الحالي:</strong> <img id="player-club-logo" src="" alt="شعار النادي"></p>
                 <p><strong>الدوري:</strong> <img id="player-league-logo" src="" alt="شعار الدوري"></p>
                 <p><strong>الجنسية:</strong> <img id="player-country-flag" src="" alt="علم الدولة"></p>
-                <p><strong>الأندية السابقة:</strong> <span id="previous-clubs"></span></p>
+                <p><strong>الأندية السابقة:</strong></p>
+                <div id="previous-clubs" class="club-logos"></div>
             </div>
         </div>
     </div>
@@ -37,6 +33,12 @@
     <div class="buttons">
         <button id="toggle-info">إظهار/إخفاء المعلومات</button>
         <button id="next-player">تبديل اللاعب</button>
+    </div>
+
+    <!-- نافذة منبثقة (Modal) لتكبير صورة اللاعب -->
+    <div id="image-modal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modal-img">
     </div>
 
     <script src="script.js"></script>
