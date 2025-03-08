@@ -18,23 +18,25 @@
         </div>
 
         <div id="player-info" class="hidden">
-            <img id="player-image" src="" alt="صورة اللاعب">
-            <h2 id="player-name"></h2>
-            <div class="details">
-                <p><strong>المركز:</strong> <span id="player-position"></span></p>
-                <p><strong>العمر:</strong> <span id="player-age"></span></p>
-                <p><strong>الطول:</strong> <span id="player-height"></span></p>
-                <p><strong>الوزن:</strong> <span id="player-weight"></span></p>
-                <p><strong>رقم اللاعب مع النادي:</strong> <span id="player-club-number"></span></p>
-                <p><strong>رقم اللاعب مع المنتخب:</strong> <span id="player-national-number"></span></p>
-                <p><strong>النادي الحالي:</strong> <span id="player-club"></span></p>
-                <p><strong>الأندية السابقة:</strong> <span id="player-previous-clubs"></span></p>
-                <p><strong>الدوري:</strong> <span id="player-league"></span></p>
-            </div>
+            <div class="player-card">
+                <img id="player-image" src="" alt="صورة اللاعب">
+                <h2 id="player-name"></h2>
+                <div class="details hidden">
+                    <p><strong>المركز:</strong> <span id="player-position"></span></p>
+                    <p><strong>العمر:</strong> <span id="player-age"></span></p>
+                    <p><strong>الطول:</strong> <span id="player-height"></span></p>
+                    <p><strong>الوزن:</strong> <span id="player-weight"></span></p>
+                    <p><strong>رقم اللاعب مع النادي:</strong> <span id="player-club-number"></span></p>
+                    <p><strong>رقم اللاعب مع المنتخب:</strong> <span id="player-national-number"></span></p>
+                    <p><strong>النادي الحالي:</strong> <span id="player-club"></span></p>
+                    <p><strong>الأندية السابقة:</strong> <span id="player-previous-clubs"></span></p>
+                    <p><strong>الدوري:</strong> <span id="player-league"></span></p>
+                </div>
 
-            <div class="buttons">
-                <button onclick="toggleDetails()">إظهار / إخفاء المعلومات</button>
-                <button onclick="changePlayer()">تغيير اللاعب</button>
+                <div class="buttons">
+                    <button onclick="toggleDetails()">إظهار / إخفاء المعلومات</button>
+                    <button onclick="changePlayer()">تغيير اللاعب</button>
+                </div>
             </div>
         </div>
 
