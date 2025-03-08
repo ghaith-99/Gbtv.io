@@ -1,63 +1,34 @@
-const players = {
-    current: [
-        {
-            name: "ليونيل ميسي",
-            position: "مهاجم",
-            age: "36",
-            height: "170 سم",
-            weight: "72 كجم",
-            clubLogo: "images/inter-miami.png",
-            leagueLogo: "images/mls.png",
-            countryFlag: "images/argentina.png",
-            previousClubs: "برشلونة, باريس سان جيرمان",
-            image: "images/messi.png"
-        },
-        {
-            name: "كريستيانو رونالدو",
-            position: "مهاجم",
-            age: "39",
-            height: "187 سم",
-            weight: "83 كجم",
-            clubLogo: "images/ronaldo-club.png",
-            leagueLogo: "images/saudi-league.png",
-            countryFlag: "images/portugal.png",
-            previousClubs: "مانشستر يونايتد, ريال مدريد, يوفنتوس",
-            image: "images/ronaldo.png"
-        }
-    ],
-    retired: [
-        {
-            name: "رونالدينيو",
-            position: "وسط هجومي",
-            age: "43",
-            height: "182 سم",
-            weight: "80 كجم",
-            clubLogo: "images/barcelona.png",
-            leagueLogo: "images/laliga.png",
-            countryFlag: "images/brazil.png",
-            previousClubs: "برشلونة, ميلان",
-            image: "images/ronaldinho.png"
-        }
-    ],
-    coaches: [
-        {
-            name: "بيب غوارديولا",
-            position: "مدرب",
-            age: "53",
-            clubLogo: "images/man-city.png",
-            leagueLogo: "images/premier-league.png",
-            countryFlag: "images/spain.png",
-            previousClubs: "برشلونة, بايرن ميونيخ",
-            image: "images/pep.png"
-        }
-    ]
-};
+const players = [
+    {
+        name: "ليونيل ميسي",
+        position: "مهاجم",
+        age: "36",
+        height: "170 سم",
+        weight: "72 كجم",
+        clubLogo: "images/messi-club.png",
+        leagueLogo: "images/laliga.png",
+        countryFlag: "images/argentina.png",
+        previousClubs: ["images/barcelona.png", "images/psg.png"],
+        image: "images/messi.png"
+    },
+    {
+        name: "كريستيانو رونالدو",
+        position: "مهاجم",
+        age: "39",
+        height: "187 سم",
+        weight: "83 كجم",
+        clubLogo: "images/ronaldo-club.png",
+        leagueLogo: "images/saudi-league.png",
+        countryFlag: "images/portugal.png",
+        previousClubs: ["images/manutd.png", "images/realmadrid.png", "images/juventus.png"],
+        image: "images/ronaldo.png"
+    }
+];
 
-let currentCategory = "current";
 let currentIndex = 0;
 
 function displayPlayer() {
-    const player = players[currentCategory][currentIndex];
+    const player = players[currentIndex];
 
     document.getElementById("player-name").textContent = player.name;
     document.getElementById("player-position").textContent = player.position;
@@ -67,13 +38,22 @@ function displayPlayer() {
     document.getElementById("player-club-logo").src = player.clubLogo;
     document.getElementById("player-league-logo").src = player.leagueLogo;
     document.getElementById("player-country-flag").src = player.countryFlag;
-    document.getElementById("previous-clubs").textContent = player.previousClubs;
     document.getElementById("player-image").src = player.image;
+
+    // عرض الأندية السابقة كصور
+    const previousClubsContainer = document.getElementById("previous-clubs");
+    previousClubsContainer.innerHTML = "";
+    player.previousClubs.forEach(club => {
+        let img = document.createElement("img");
+        img.src = club;
+        img.alt = "شعار النادي السابق";
+        previousClubsContainer.appendChild(img);
+    });
 }
 
-// تبديل اللاعب عند الضغط على الزر
+// تبديل اللاعب
 document.getElementById("next-player").addEventListener("click", function() {
-    currentIndex = (currentIndex + 1) % players[currentCategory].length;
+    currentIndex = (currentIndex + 1) % players.length;
     displayPlayer();
 });
 
@@ -82,11 +62,15 @@ document.getElementById("toggle-info").addEventListener("click", function() {
     document.querySelector(".player-details").classList.toggle("hidden");
 });
 
-// تبديل الفئة من القائمة المنسدلة
-document.getElementById("category-selector").addEventListener("change", function(event) {
-    currentCategory = event.target.value;
-    currentIndex = 0;
-    displayPlayer();
+// تكبير صورة اللاعب عند الضغط عليها
+document.getElementById("player-image").addEventListener("click", function() {
+    document.getElementById("modal-img").src = this.src;
+    document.getElementById("image-modal").style.display = "flex";
+});
+
+// إغلاق النافذة المنبثقة
+document.querySelector(".close").addEventListener("click", function() {
+    document.getElementById("image-modal").style.display = "none";
 });
 
 // عرض اللاعب الأول عند تحميل الصفحة
