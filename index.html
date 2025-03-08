@@ -8,58 +8,42 @@
 </head>
 <body>
 
-    <div class="container">
+    <header>
         <h1>تحدي كرة القدم</h1>
-        
-        <div class="buttons">
-            <button id="retired-button">لاعبون معتزلون</button>
-            <button id="current-button">لاعبون حاليون</button>
-            <button id="coaches-button">مدربون</button>
+        <select id="category-selector">
+            <option value="current">لاعبون حاليون</option>
+            <option value="retired">لاعبون معتزلون</option>
+            <option value="coaches">مدربون</option>
+        </select>
+    </header>
+
+    <div class="player-card">
+        <img id="player-image" src="" alt="صورة اللاعب">
+        <div class="player-details">
+            <h2 id="player-name"></h2>
+            <p><strong>المركز:</strong> <span id="player-position"></span></p>
+            <p><strong>العمر:</strong> <span id="player-age"></span></p>
+            <p><strong>الطول:</strong> <span id="player-height"></span></p>
+            <p><strong>الوزن:</strong> <span id="player-weight"></span></p>
+            <p><strong>النادي الحالي:</strong> <img id="player-club-logo" src="" alt="شعار النادي"></p>
+            <p><strong>الدوري:</strong> <img id="player-league-logo" src="" alt="شعار الدوري"></p>
+            <p><strong>الجنسية:</strong> <img id="player-country-flag" src="" alt="علم الدولة"></p>
+            <p><strong>الأندية السابقة:</strong> <span id="previous-clubs"></span></p>
         </div>
+    </div>
 
-        <div id="player-info" class="hidden">
-            <div class="player-card">
-                <img id="player-image" src="" alt="صورة اللاعب">
-                <h2 id="player-name"></h2>
+    <div class="buttons">
+        <button id="prev-player">السابق</button>
+        <button id="next-player">التالي</button>
+        <button id="toggle-info">إظهار/إخفاء المعلومات</button>
+        <button id="show-more">المزيد</button>
+    </div>
 
-                <div class="info-row">
-                    <strong>المركز:</strong> <span id="player-position"></span>
-                </div>
-                <div class="info-row">
-                    <strong>العمر:</strong> <span id="player-age"></span>
-                </div>
-                <div class="info-row">
-                    <strong>الطول:</strong> <span id="player-height"></span>
-                </div>
-                <div class="info-row">
-                    <strong>الوزن:</strong> <span id="player-weight"></span>
-                </div>
-                <div class="info-row">
-                    <strong>النادي الحالي:</strong>
-                    <img id="player-club-logo" src="" alt="شعار النادي">
-                </div>
-                <div class="info-row">
-                    <strong>الأندية السابقة:</strong>
-                    <div id="player-previous-clubs-logos"></div>
-                </div>
-                <div class="info-row">
-                    <strong>الدوري:</strong>
-                    <img id="player-league-logo" src="" alt="شعار الدوري">
-                </div>
-                <div class="info-row">
-                    <strong>الجنسية:</strong>
-                    <img id="player-nationality-flag" src="" alt="علم الدولة">
-                </div>
-
-                <div class="buttons">
-                    <button id="change-player-button">تغيير اللاعب</button>
-                </div>
-            </div>
-        </div>
-
+    <div id="player-extra-info" class="hidden">
+        <h3>معلومات إضافية</h3>
+        <p id="extra-details"></p>
     </div>
 
     <script src="script.js"></script>
-
 </body>
 </html>
