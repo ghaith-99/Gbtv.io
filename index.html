@@ -84,7 +84,7 @@
 
         let currentPlayerIndex = 0;
 
-                function displayPlayer() {
+        function displayPlayer() {
             const player = players[currentPlayerIndex];
             document.getElementById("playerImage").src = player.image;
             document.getElementById("playerName").innerText = player.name;
@@ -98,7 +98,7 @@
         }
 
         document.getElementById("toggleInfoButton").addEventListener("click", function() {
-            const infoDiv = document.getElementById("playerInfo");
+            const infoDiv = document.getElementById(" playerInfo");
             if (infoDiv.style.display === "none" || infoDiv.style.display === "") {
                 infoDiv.style.display = "block";
                 this.innerText = "إخفاء المعلومات";
@@ -116,6 +116,5 @@
         // عرض اللاعب الأول عند تحميل الصفحة
         displayPlayer();
     </script>
-
 </body>
 </html>
