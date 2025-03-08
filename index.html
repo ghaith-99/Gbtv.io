@@ -1,141 +1,101 @@
-<html lang="en">
+<!DOCTYPE html>
+<html lang="ar">
 <head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Yacine TV</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لعبة اللاعب</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+        .player-info {
+            display: none;
+            margin-top: 10px;
+        }
+        img {
+            width: 200px;
+            height: auto;
+            border-radius: 10px;
+        }
+        button {
+            margin: 5px;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
         }
     </style>
 </head>
-<body class="bg-red-700 text-white">
-<!-- Main Container -->
-<div class="flex flex-col items-center min-h-screen">
-    <!-- Logo Section -->
-    <div class="flex items-center justify-center h-1/3 w-full">
-        <div class="text-center">
-            <h1 class="text-6xl font-bold">
-                YACINE
-                <span class="text-white bg-red-700 px-2">TV</span>
-            </h1>
-        </div>
-    </div>
-    <!-- Menu Section -->
-    <div class="w-full px-4">
-        <div class="bg-red-600 p-4 rounded-lg shadow-lg">
-            <div class="flex justify-between items-center mb-4">
-                <i class="fas fa-bars text-2xl"></i>
-                <h2 class="text-xl font-bold">Yacine TV</h2>
-                <i class="fas fa-search text-2xl"></i>
-            </div>
-            <div class="space-y-4">
-                <button class="w-full bg-white text-red-700 font-bold py-2 rounded-lg" onclick="openVideoPlayer('ALRAHMA beIN Sport 1 HD', 'https://tv.kooraiq.com:4433/beIN_sport1/tracks-v1a1/mono.m3u8', 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/1-HD.png/240px-1-HD.png')">BIEN SPORT (720P)</button>
-                <button class="w-full bg-white text-red-700 font-bold py-2 rounded-lg" onclick="openVideoPlayer('ALRAHMA beIN Sport 1 HD', 'https://tv.kooraiq.com:4433/beIN_sport1/tracks-v1a1/mono.m3u8', 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/1-HD.png/240px-1-HD.png')">BIEN SPORT (360P)</button>
-                <button class="w-full bg-white text-red-700 font-bold py-2 rounded-lg" onclick="openVideoPlayer('ALRAHMA beIN Sport 1 HD', 'https://tv.kooraiq.com:4433/beIN_sport1/tracks-v1a1/mono.m3u8', 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/1-HD.png/240px-1-HD.png')">BIEN SPORT (244P)</button>
-                <button class="w-full bg-white text-red-700 font-bold py-2 rounded-lg" onclick="openVideoPlayer('ALRAHMA beIN Sport 1 HD', 'https://tv.kooraiq.com:4433/beIN_sport1/tracks-v1a1/mono.m3u8', 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/1-HD.png/240px-1-HD.png')">BIEN ENTERTAINMENT</button>
-                <button class="w-full bg-white text-red-700 font-bold py-2 rounded-lg" onclick="openVideoPlayer('ALRAHMA beIN Sport 1 HD', 'https://tv.kooraiq.com:4433/beIN_sport1/tracks-v1a1/mono.m3u8', 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/1-HD.png/240px-1-HD.png')">ARABIC CHANNELS</button>
-                <button class="w-full bg-white text-red-700 font-bold py-2 rounded-lg" onclick="openVideoPlayer('ALRAHMA beIN Sport 1 HD', 'https://tv.kooraiq.com:4433/beIN_sport1/tracks-v1a1/mono.m3u8', 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/1-HD.png/240px-1-HD.png')">OSN CHANNELS</button>
-                <button class="w-full bg-white text-red-700 font-bold py-2 rounded-lg" onclick="openVideoPlayer('ALRAHMA beIN Sport 1 HD', 'https://tv.kooraiq.com:4433/beIN_sport1/tracks-v1a1/mono.m3u8', 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/1-HD.png/240px-1-HD.png')">MBO CHANNELS</button>
-                <button class="w-full bg-white text-red-700 font-bold py-2 rounded-lg" onclick="openVideoPlayer('ALRAHMA beIN Sport 1 HD', 'https://tv.kooraiq.com:4433/beIN_sport1/tracks-v1a1/mono.m3u8', 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/1-HD.png/240px-1-HD.png')">FRANCE CHANNELS</button>
-                <button class="w-full bg-white text-red-700 font-bold py-2 rounded-lg" onclick="openVideoPlayer('ALRAHMA beIN Sport 1 HD', 'https://tv.kooraiq.com:4433/beIN_sport1/tracks-v1a1/mono.m3u8', 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/1-HD.png/240px-1-HD.png')">KIDS CHANNELS</button>
-            </div>
-        </div>
-    </div>
-    <!-- Channels Section -->
-    <div class="w-full px-4 mt-4">
-        <div class="bg-red-600 p-4 rounded-lg shadow-lg">
-            <div class="flex justify-between items-center mb-4">
-                <i class="fas fa-arrow-left text-2xl"></i>
-                <h2 class="text-xl font-bold">ARABIC CHANNELS</h2>
-                <i class="fas fa-search text-2xl"></i>
-            </div>
-            <div class="grid grid-cols-3 gap-4">
-                <div class="bg-white p-2 rounded-lg text-center">
-                    <img alt="Flag of Algeria" class="mx-auto mb-2" height="100" src="https://storage.googleapis.com/a1aa/image/BCGrgyVMfwlPSsxYD6ySOfwfz5WRXQm2NrsylJJO7QA.jpg" width="100"/>
-                    <p class="text-red-700 font-bold">ALGERIA</p>
-                </div>
-                <div class="bg-white p-2 rounded-lg text-center">
-                    <img alt="Flag of Morocco" class="mx-auto mb-2" height="100" src="https://storage.googleapis.com/a1aa/image/n_KvEDQVyos_H2wtGbfPql4oqlyi_rgYOoPUmqsU9ns.jpg" width="100"/>
-                    <p class="text-red-700 font-bold">MOROCCO</p>
-                </div>
-                <div class="bg-white p-2 rounded-lg text-center">
-                    <img alt="Flag of Tunisia" class="mx-auto mb-2" height="100" src="https://storage.googleapis.com/a1aa/image/JSayvFqfJjS9tgesnsHUWzLPRThIn-IgkthvBlKv8YY.jpg" width="100"/>
-                    <p class="text-red-700 font-bold">TUNISIA</p>
-                </div>
-                <div class="bg-white p-2 rounded-lg text-center">
-                    <img alt="Flag of Libya" class="mx-auto mb-2" height="100" src="https://storage.googleapis.com/a1aa/image/HBije4T7_-FSvme8KwpLZXu__JifIt2ngxE8j_4R0Mc.jpg" width="100"/>
-                    <p class="text-red-700 font-bold">LIBYA</p>
-                </div>
-                <div class="bg-white p-2 rounded-lg text-center">
-                    <img alt="Flag of Egypt" class="mx-auto mb-2" height="100" src="https://storage.googleapis.com/a1aa/image/frDdOuCDIXutoge_dx8_n3bHgmAmSn31rXHyk8OJtDE.jpg" width="100"/>
-                    <p class="text-red-700 font-bold">EGYPT</p>
-                </div>
-                <div class="bg-white p-2 rounded-lg text-center">
-                    <img alt="Flag of Saudi Arabia" class="mx-auto mb-2" height="100" src="https://storage.googleapis.com/a1aa/image/Bp05TYJAUr90Jj8mqjdZ_kq2O6PN-6QD-LSiTscH5YE.jpg" width="100"/>
-                    <p class="text-red-700 font-bold">SAUDI ARABIA</p>
-                </div>
-                <div class="bg-white p-2 rounded-lg text-center">
-                    <img alt="Flag of UAE" class="mx-auto mb-2" height="100" src="https://storage.googleapis.com/a1aa/image/5NAXpXzCwmZyfV-8E1gTrE4sOkqZnFNJGeWpYZQxIOM.jpg" width="100"/>
-                    <p class="text-red-700 font-bold">UEA</p>
-                </div>
-                <div class="bg-white p-2 rounded-lg text-center">
-                    <img alt="Flag of Palestine" class="mx-auto mb-2" height="100" src="https://storage.googleapis.com/a1aa/image/8ro1N5bLn5j8VZePfzlMr7dFehcWkU1J_t36U2qx1pc.jpg" width="100"/>
-                    <p class="text-red-700 font-bold">PALESTINE</p>
-                </div>
-                <div class="bg-white p-2 rounded-lg text-center">
-                    <img alt="Flag of Jordan" class="mx-auto mb-2" height="100" src="https://storage.googleapis.com/a1aa/image/YpEOauKfLZ26_nhaStIQCqNptiRvxgLwdyANLUQM-l8.jpg" width="100"/>
-                    <p class="text-red-700 font-bold">JORDAN</p>
-                </div>
-                <div class="bg-white p-2 rounded-lg text-center">
-                    <img alt="Flag of Lebanon" class="mx-auto mb-2" height="100" src="https://storage.googleapis.com/a1aa/image/4TVSRjxS5d8U4J5HMRnbhYICFbdYuuiC1Rm1o6KlFHY.jpg" width="100"/>
-                    <p class="text-red-700 font-bold">LEBANON</p>
-                </div>
-                <div class="bg-white p-2 rounded-lg text-center">
-                    <img alt="Flag of Syria" class="mx-auto mb-2" height="100" src="https://storage.googleapis.com/a1aa/image/A4qXkaOCU1mvhPVSna7MvoechkALaWLPMJR4VitZZik.jpg" width="100"/>
-                    <p class="text-red-700 font-bold">SYRIA</p>
-                </div>
-                <div class="bg-white p-2 rounded-lg text-center">
-                    <img alt="Flag of Iraq" class="mx-auto mb-2" height="100" src="https://storage.googleapis.com/a1aa/image/nRt1bhbn2jEnsZlhFFzpF0kynwXaN1Och7G2u9R9vi0.jpg" width="100"/>
-                    <p class="text-red-700 font-bold">IRAQ</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<body>
 
-<!-- Video Player Modal -->
-<div id="videoPlayerModal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center hidden">
-    <div class="bg-white rounded-lg p-4 w-11/12 md:w-1/2">
-        <div class="flex justify-between items-center mb-4">
-            <h2 id="channelName" class="text-xl font-bold text-red-700"></h2>
-            <button onclick="closeVideoPlayer()" class="text-red-700 text-2xl">&times;</button>
-        </div>
-        <div class="mb-4">
-            <img id="channelLogo" class="mx-auto mb-2" height="100" width="100" alt="Channel Logo"/>
-        </div>
-        <video id="videoPlayer" class="w-full" controls>
-            <source id="videoSource" type="application/x-mpegURL">
-            Your browser does not support the video tag.
-        </video>
+    <h1>لعبة اللاعب</h1>
+    <img id="playerImage" src="" alt="صورة اللاعب">
+    <div class="player-info" id="playerInfo">
+        <h2 id="playerName"></h2>
+        <p><strong>المركز:</strong> <span id="playerPosition"></span></p>
+        <p><strong>العمر:</strong> <span id="playerAge"></span></p>
+        <p><strong>النادي:</strong> <span id="playerClub"></span></p>
+        <p><strong>الجنسية:</strong> <span id="playerNationality"></span></p>
+        <p><strong>الطول:</strong> <span id="playerHeight"></span></p>
+        <p><strong>الوزن:</strong> <span id="playerWeight"></span></p>
+        <p><strong>الأندية السابقة:</strong> <span id="playerPreviousClubs"></span></p>
     </div>
-</div>
+    <button id="toggleInfoButton">إظهار المعلومات</button>
+    <button id="changePlayerButton">تغيير اللاعب</button>
 
-<script>
-    function openVideoPlayer(channel, url, logo) {
-        document.getElementById('channelName').innerText = channel;
-        document.getElementById('videoSource').src = url;
-        document.getElementById('channelLogo').src = logo;
-        document.getElementById('videoPlayer').load();
-        document.getElementById('videoPlayerModal').classList.remove('hidden');
-    }
+    <script>
+        const players = [
+            {
+                name: "محمد صلاح",
+                position: "جناح",
+                age: 31,
+                club: "ليفربول",
+                nationality: "مصري",
+                height: "175 سم",
+                weight: "71 كغ",
+                previousClubs: "الاهلي، بازل، تشيلسي، فيورنتينا، روما",
+                image: "https://upload.wikimedia.org/wikipedia/ar/0/0c/Mohamed_Salah_2018.jpg"
+            },
+            {
+                name: "ليونيل ميسي",
+                position: "مهاجم",
+                age: 36,
+                club: "باريس سان جيرمان",
+                nationality: "أرجنتيني",
+                height: "170 سم",
+                weight: "72 كغ",
+                previousClubs: "برشلونة",
+                image: "https://upload.wikimedia.org/wikipedia/commons/0/02/Lionel_Messi_20180626.jpg"
+            },
+            {
+                name: "كريستيانو رونالدو",
+                position: "مهاجم",
+                age: 38,
+                club: "النصر",
+                nationality: "برتغالي",
+                height: "187 سم",
+                weight: "83 كغ",
+                previousClubs: "سبورتينغ لشبونة، مانشستر يونايتد، ريال مدريد، يوفنتوس",
+                image: "https://upload.wikimedia.org/wikipedia/commons/8/8c/Cristiano_Ronaldo_2018.jpg"
+            }
+        ];
 
-    function closeVideoPlayer() {
-        document.getElementById('videoPlayerModal').classList.add('hidden');
-        document.getElementById('videoPlayer').pause();
-    }
-</script>
-</body>
-</html>
+        let currentPlayerIndex = 0;
+
+        function displayPlayer() {
+            const player = players[currentPlayerIndex];
+            document.getElementById("playerImage").src = player.image;
+            document.getElementById("playerName").innerText = player.name;
+            document.getElementById("playerPosition").innerText = player.position;
+            document.getElementById("playerAge").innerText = player.age;
+            document.getElementById("playerClub").innerText = player.club;
+            document.getElementById("playerNationality").innerText = player.nationality;
+            document.getElementById("playerHeight").innerText = player.height;
+            document.getElementById("playerWeight").innerText = player.weight;
+            document.getElementById("playerPreviousClubs").innerText = player.previousClubs;
+        }
+
+        document.getElementById("toggleInfoButton").addEventListener("click", function() {
+            const infoDiv = document.getElementById("playerInfo
